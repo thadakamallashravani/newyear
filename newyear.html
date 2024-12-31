@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Year Greeting</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #ff7e5f, #feb47b);
+            color: white;
+        }
+        .input-container {
+            text-align: center;
+        }
+        input {
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-top: 10px;
+            background-color: #ff6f61;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="input-container">
+        <h1>Enter Your Name</h1>
+        <input type="text" id="username" placeholder="Your Name">
+        <button onclick="goToGreeting()">Submit</button>
+    </div>
+    <script>
+        function goToGreeting() {
+            const username = document.getElementById('username').value;
+            if (username) {
+                window.location.href = `greeting.html?name=${encodeURIComponent(username)}`;
+            } else {
+                alert('Please enter your name!');
+            }
+        }
+    </script>
+</body>
+</html>
